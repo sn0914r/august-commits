@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Positioning</title>
+    <style>
+      .box {
+        width: 200px;
+        aspect-ratio: 1;
+        border: 2px solid black;
+        padding: 1rem;
+        margin: 1rem;
+      }
+      .relative {
+        position: relative;
+      }
+      .absolute {
+        position: absolute;
+      }
+      .fixed{
+        position: fixed;
+      }
+      .sticky{
+        position: sticky;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">Static Element</div>
+    <div
+      class="relative box"
+      style="top: 50px; left: 50px; background-color: palevioletred"
+    >
+      Element Positioned Relative, Moves relative to the body. It still occupies
+      the original space in the webpage.
+
+      <div
+        class="absolute box"
+        style="
+          width: 100px;
+          background-color: blanchedalmond;
+          bottom: 0px;
+          left: 0px;
+          margin: 0px;
+        "
+      >
+        this is an absolute element, moves relative to its parent
+      </div>
+    </div>
+    <div class="box">Static Element</div>
+
+    <div class="absolute box" style="background-color: brown; top: 0; right: 0">
+      this is an absolute element, moves relative to the webpage
+      <div
+        class="absolute box"
+        style="
+          background-color: white;
+          margin: 0px;
+          width: 100px;
+          bottom: 0;
+          right: 0;
+        "
+      >
+        this is an absolute element inside another absolute element, this moves
+        relative to its parent.
+      </div>
+    </div>
+
+    <div class="fixed box" style="background-color: aqua; top: 0; left: 50%; transform: translateX(-50%);">
+        this is fixed element, always positioned relative to view port.
+    </div>
+
+    <div class="relative box" style="width: 90%">
+        this is a relative positioned container
+        <div class="sticky box" style="background-color: aquamarine; top: 0; left: 0;">
+            this is a sticky element, 
+            relative to its parent,
+            if it reaches the spot we set (top:0, left: 0), it sticks there and visible as long as it's parent is seen.
+        </div>
+    </div>
+
+    <div class="box" style="width: 90%">dummy box</div>
+    <div class="box" style="width: 90%">dummy box</div>
+    <div class="box" style="width: 90%">dummy box</div>
+  </body>
+</html>

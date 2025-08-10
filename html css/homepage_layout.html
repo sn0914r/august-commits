@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+
+      .tc {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+      }
+
+      .grid {
+        display: grid;
+      }
+
+      .container {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      header {
+        background-color: palevioletred;
+        width: 100%;
+        padding: 20px;
+      }
+      .hero {
+        width: 100%;
+        height: 80vh;
+        background-color: aqua;
+      }
+      .services {
+        background-color: yellowgreen;
+        padding: 0.5rem 0;
+        h2 {
+          text-align: center;
+          margin-top: 0.5rem;
+          margin-bottom: 1rem;
+        }
+        .grid {
+          display: grid;
+          gap: 0.5rem;
+          grid-template-columns: 1fr 1fr;
+          .service-cards {
+            width: 100%;
+            aspect-ratio: 1;
+          }
+        }
+      }
+      .portfolio {
+        background-color: coral;
+        padding: 1rem 0;
+
+        h2 {
+          text-align: center;
+          margin-bottom: 0.5rem;
+        }
+        h3{
+            text-align: center;
+        }
+
+        .grid{
+            grid-template-columns: 1fr;
+            padding: 1rem 0;
+            justify-items: center;
+            gap: 1rem;
+
+            .portfolio-cards{
+                width: 90%;
+                height: 180px;
+                border: 2px solid black;
+            }
+        }
+      }
+      .testimonials{
+        background-color: yellowgreen;
+        padding: 1rem 0;
+        h2{
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .grid{
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            justify-items: center;
+            .testimonial-card{
+                width: 90%;
+                height: 150px;
+                border: 2px solid black;
+            }
+        }
+      }
+      footer{
+        height: 100px;
+      }
+
+      @media (min-width:572px) {
+        .hero{
+          height: 60vh;
+        }
+        .services{
+          .grid{
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+        }
+        .portfolio{
+          .grid{
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+      }
+
+      @media (min-width:992px) {
+        .hero{
+          height: 60vh;
+        }
+        .services{
+          .grid{
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+          }
+        }
+        .portfolio{
+          .grid{
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+        }
+        .testimonials{
+          .grid{
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+      }
+
+      @media (min-width:572px) {
+        .testimonials{
+          .grid{
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="tc">Header</header>
+
+    <section class="hero tc">Hero Section</section>
+
+    <section class="services">
+      <div class="container">
+        <h2>Services</h2>
+        <div class="grid">
+          <article
+            class="service-cards"
+            style="background-color: chocolate"
+          ></article>
+          <article
+            class="service-cards"
+            style="background-color: violet"
+          ></article>
+          <article
+            class="service-cards"
+            style="background-color: cadetblue"
+          ></article>
+          <article
+            class="service-cards"
+            style="background-color: turquoise"
+          ></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio">
+      <div class="container">
+        <h2>Portfolio</h2>
+        <h3>sub heading sub heading sub heading</h3>
+
+        <div class="grid">
+          <article class="portfolio-cards" style="background-color: violet;"></article>
+          <article class="portfolio-cards" style="background-color: turquoise;"></article>
+          <article class="portfolio-cards" style="background-color: tomato;"></article>
+        </div>
+      </div>
+    </section>
+
+    <div class="testimonials">
+        <h2>Testimonials</h2>
+        <div class="container">
+            <div class="grid">
+                <article class="testimonial-card tc" style="background-color: whitesmoke;">testimonial 1</article>
+                <article class="testimonial-card tc" style="background-color: whitesmoke;">testimonial 2</article>
+                <article class="testimonial-card tc" style="background-color: whitesmoke;">testimonial 3</article>
+            </div>
+        </div>
+    </div>
+
+    <footer class="tc">
+      footer
+    </footer>
+  </body>
+</html>
