@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Delegation</title>
+    <style>
+      section {
+        border: 2px solid #222222;
+        padding: 1rem;
+        margin: 1rem;
+      }
+      button {
+        padding: 2px 16px;
+        border-radius: 1rem;
+        border: 1px solid #222222;
+        color: #fff;
+        &:active{
+            color: #222222;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center;">Event Delegation</h1>
+    <section>
+      <button style="background-color: brown;">btn-1</button>
+      <button style="background-color: green;">btn-2</button>
+      <button style="background-color: blueviolet;">btn-3</button>
+      <button style="background-color: darkorange">btn-4</button>
+      <button style="background-color: magenta;">btn-5</button>
+    </section>
+    <section>
+        <p>You clicked: <span></span></p>
+    </section>
+    <script>
+        const output = document.querySelector("span");
+        const parent = document.querySelector("section");
+        const handlerFn=e=>output.textContent = e.target.innerHTML
+        parent.addEventListener("click", handlerFn)
+    </script>
+  </body>
+</html>
