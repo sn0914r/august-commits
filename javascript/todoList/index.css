@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: teal;
+}
+
+header{
+    height: 10vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #e8e8e8;
+    margin-bottom: 1rem;
+}
+
+main{
+    width: 90%;
+    margin: 0 auto;
+
+    form{
+        background-color: #e8e8e8;
+        padding: 1.5rem 1rem;
+        margin-bottom: 1rem;
+        border-radius: 25px;
+
+        display: flex;
+        justify-content: space-evenly;
+
+        button[type='submit']{
+            background-color:blueviolet;
+            color: #e8e8e8;
+            padding: 0.25rem 1rem;
+            border: none;
+            border-radius: 0.25rem;
+            
+            &:hover{
+                background-color: blue;
+            }
+        }
+
+        .form-group{
+            label{
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+            input{
+                border: none;
+                padding: 0.25rem 0.5rem;
+                border-radius: 0.25rem;
+
+                &::placeholder{
+                    color:blueviolet
+                }
+            }
+        }
+    }
+
+    h1{
+        text-align: center;
+        color: aliceblue;
+        text-decoration: underline 2px;
+        text-underline-offset: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .task-holder{
+        article{
+            padding: 0.5rem 1rem;
+            background-color: #e8e8e8;
+            border-radius: 1rem;
+            h3{
+                text-transform: capitalize;
+            }
+            p{
+                text-transform: capitalize;
+                margin-bottom: 0.25rem;
+            }
+            button{
+                padding: 0.25rem 1rem;
+                border-radius: 0.5rem;
+                font-weight: bolder;
+                
+                &:nth-of-type(1){
+                    color:slateblue;
+                    background-color: greenyellow;
+                }
+                &:nth-of-type(2){
+                    color: white;
+                    background-color: blueviolet;
+                }
+                &:nth-of-type(3){
+                    color: white;
+                    background-color: red;
+                }
+            }
+        }
+    }
+}

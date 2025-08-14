@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <header>
+        <h1>To do List</h1>
+    </header>
+    <main>
+        <section>
+            <form>
+                <div class="form-group">
+                    <label for="title">Title: </label>
+                    <input type="text" name="title" id="title" placeholder="enter a title" maxlength="25">
+                </div>
+
+                <div class="form-group">
+                    <label for="content">Content: </label>
+                    <input type="text" name="content" id="content" placeholder="enter the content" maxlength="100">
+                </div>
+
+                <button type="submit">Add task</button>
+            </form>
+        </section>
+        <h1>Add, Delete, Edit Tasks:</h1>
+        <section class="task-holder">
+            <article>
+                <h3>title</h3>
+                <p>content</p>
+                <button onclick="taskCompleted(this)">not completed</button>
+                <button onclick="taskEdit(this)">edit</button>
+                <button onclick="this.parentElement.remove()">delete</button>
+            </article>
+        </section>
+    </main>
+
+    <script src="./index.js" defer></script>
+</body>
+</html>
