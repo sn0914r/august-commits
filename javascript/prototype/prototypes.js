@@ -1,71 +1,48 @@
-// const obj1 = {
-//     fname: "sivananda",
-//     lname: "reddy"
-// }
-
-// const obj2 = Object.create(obj1);
-// obj2.gender="male"
-
-// // console.log(obj2.fname); // Ouput:- sivananda
-// // console.log(obj2.gender); // output:- male
-
-// // console.log(obj2);
-
-// // console.log(Object.getPrototypeOf(obj2));
-// // console.log(Object.getPrototypeOf(obj2.__proto__))
-// // console.log(Object.getPrototypeOf(obj2.__proto__.__proto__)) // null
-
-// function Person(name) {
-//   this.name = name;
-// }
-// Person.prototype.sayHello = function() {
-//   console.log("Hi, I'm " + this.name);
-// };
-
-// function Student(name, grade) {
-//   Person.call(this, name); // copies property "name"
-//   this.grade = grade;
-// }
-// Student.prototype = Object.create(Person.prototype); // inherit methods
-// Student.prototype.constructor = Student;
-
-// // const s1 = new Student("Siva", "A");
-
-// //console.log(s1)
-
-// // console.log(Object.getPrototypeOf(s1));
-
-
-// // const array=[1, 2, 3]
-
-// // console.log(array)
-// // console.log(array.__proto__)
-
-// // const obj45 = {
-// //     name: "siva"
-// // }
-
-// // console.log(obj45.__proto__)
-
-// // const str = "siva"
-
-
-// const obj444 = {
-//     name: "Siva"
-// }
-
-
-// class Person{
-//     static fname="ramesh"
-//     lname = "yadav"
-// }
-
-// let p1 = new Person();
-// console.log(Person.fname)
-
-function siv() {
-    console.log(this.name)
+const person1 = {
+    name: "tiGor"
 }
-siv.name = "hi"
 
-console.log(siv.name)
+const person2 = {
+    name: "bhAAi"
+}
+
+console.log(person1);
+console.log(person1.__proto__); // logs Object.prototype object
+console.log(person1.__proto__.__proto__); // null
+
+// person1 -> Object.prototype -> null
+
+const student1 = Object.create(person1);
+student1.school = "SISTK School"
+
+console.log(student1); // logs {school: 'SISTK School' }
+console.log(student1.__proto__); // logs person1 object
+console.log(student1.__proto__.__proto__); // logs Object.prototype
+console.log(student1.__proto__.__proto__.__proto__); // null
+
+
+function Person (name) {
+    this.name = name
+}
+
+Person.prototype.greet = function () {
+    console.log("Hello", this.name);
+}
+
+function Student (name, school) {
+    Person.call(this, name);
+    this.school = school;
+}
+
+Student.prototype = Object.create(Person.prototype);
+
+let s1 = new Student ("vinod", "SISTK School");
+s1.greet();
+
+console.log(s1.constructor === Student); // logs false because we linked Person Prototype to Student Prototype
+console.log(s1.constructor === Person); // logs true
+
+Student.prototype.constructor = Student;
+console.log(s1.constructor === Student); // now it logs true
+
+// the chain is s1 -> Student.prototype -> Person.prototype -> Object.prototype -> null
